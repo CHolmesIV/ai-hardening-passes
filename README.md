@@ -15,6 +15,10 @@ The good news: every fix here is promptable. You do not need to write the code y
 | [Performance pass](passes/03-performance-pass.md) | Slow by default: unpaginated tables, no caching, main-thread everything |
 | [Role prompts](passes/04-role-prompts.md) | How to make the AI review its own work like a senior engineer instead of agreeing with you |
 
+## Use it as a skill
+
+`skills/security-pass/` is a ready-to-install [Claude Code skill](https://docs.claude.com/en/docs/claude-code) version of the security pass. Drop it into your project's `.claude/skills/` directory (or `~/.claude/skills/` for all projects), then say "run a security pass" in Claude Code — it audits your actual code and demands evidence for every item instead of reassurance. The other passes are prompt checklists you can paste directly.
+
 ## How to use these
 
 Run each pass against your app before launch, then again any time the AI builds a new surface. Each item is phrased so you can paste it into your AI session as a work order. Make the AI show you evidence, not reassurance: the test, the config line, the header in the response.
