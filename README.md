@@ -14,6 +14,7 @@ The good news: every fix here is promptable. You do not need to write the code y
 | [Scale pass](passes/02-scale-pass.md) | The first 50 concurrent users kill the database, not the hundredth |
 | [Performance pass](passes/03-performance-pass.md) | Slow by default: unpaginated tables, no caching, main-thread everything |
 | [Role prompts](passes/04-role-prompts.md) | How to make the AI review its own work like a senior engineer instead of agreeing with you |
+| [Production security pass](passes/05-production-security-pass.md) | The failures beyond login: tenant isolation, SSRF, queues, webhooks, billing, deletion, and resource limits |
 
 ## Use it as a skill
 
@@ -22,6 +23,8 @@ The good news: every fix here is promptable. You do not need to write the code y
 ## How to use these
 
 Run each pass against your app before launch, then again any time the AI builds a new surface. Each item is phrased so you can paste it into your AI session as a work order. Make the AI show you evidence, not reassurance: the test, the config line, the header in the response.
+
+For a full-repository review, start with the short security pass, then run the production security pass by trust boundary. Record findings with the [audit finding template](templates/audit-finding.md) so another engineer can reproduce, prioritize, and close them without rereading the entire audit.
 
 ## Who this is for
 

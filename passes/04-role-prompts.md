@@ -31,3 +31,7 @@ Same pattern, scoped: design the system before building the minimum version of i
 ## The rule that makes all of these work
 
 One role per session, run it against work the session did not produce, and demand artifacts: a ranked list, a test, a config, a number. If the output is a compliment, the prompt failed.
+
+For a large codebase, divide the review by trust boundary rather than arbitrary folders: identity and authorization, tenant data, file and network I/O, asynchronous work, billing, frontend state, and operations. A cheaper model can inventory routes and trace call paths; the senior reviewer should validate exploitability, reject speculative findings, set severity, and own the final recommendation. Do not let multiple reviewers file the same root cause as separate issues.
+
+**Second-eye work order:** "Review code you did not write. Make no changes on the first pass. For each finding, provide the affected boundary, concrete failure or attack path, code evidence, user impact, smallest safe fix, and a regression test. Check existing issues before filing. If you cannot demonstrate impact from the code or a test, label it a question, not a vulnerability."
