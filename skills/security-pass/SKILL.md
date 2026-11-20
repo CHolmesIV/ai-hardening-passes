@@ -1,6 +1,6 @@
 ---
 name: security-pass
-description: Run a pre-launch security pass on an AI-built app. Use when the user says "security pass", "harden my app", "audit my auth", "is my login secure", or is about to ship an app with authentication to real users. Checks session storage, server-side authorization, signup verification, auth rate limiting, password policy, and leaked secrets — and demands evidence for each, not reassurance.
+description: Run a pre-launch security pass on an AI-built app. Use when the user says "security pass", "harden my app", "audit my auth", "is my login secure", or is about to ship an app with authentication to real users. Checks session storage, server-side authorization, signup verification, auth rate limiting, password policy, and leaked secrets. Demands evidence for each, not reassurance.
 ---
 
 # Security Pass
@@ -19,13 +19,13 @@ For every privileged/admin/role-gated endpoint: the role must be loaded server-s
 Email verification must be on. If the auth provider supports 2FA, it should at least be available to users. Evidence: the provider setting name/value or the code path enforcing it.
 
 ## 4. Auth endpoint rate limiting
-Login, signup, and password reset must be rate limited (provider-side counts if a managed provider fronts them — verify, don't assume). Evidence: limiter config, then prove it — fire rapid repeated attempts and show the 429/lockout.
+Login, signup, and password reset must be rate limited (provider-side counts if a managed provider fronts them, but verify, don't assume). Evidence: limiter config, then prove it: fire rapid repeated attempts and show the 429/lockout.
 
 ## 5. Password policy
 Minimum length enforced and, where the provider supports it, breached-password checking enabled. Evidence: setting or validation code.
 
 ## 6. Secrets in the repo
-Scan the working tree AND git history for API keys, tokens, connection strings, private keys. Report every hit (file, line, what it appears to be). Anything real found must be ROTATED, not just deleted — deletion without rotation is not a fix, and say so explicitly.
+Scan the working tree AND git history for API keys, tokens, connection strings, private keys. Report every hit (file, line, what it appears to be). Anything real found must be ROTATED, not just deleted. Deletion without rotation is not a fix, and say so explicitly.
 
 ## Output contract
 Finish with:

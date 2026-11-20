@@ -18,7 +18,7 @@ The good news: every fix here is promptable. You do not need to write the code y
 
 ## Use it as a skill
 
-`skills/security-pass/` is a ready-to-install [Claude Code skill](https://docs.claude.com/en/docs/claude-code) version of the security pass. Drop it into your project's `.claude/skills/` directory (or `~/.claude/skills/` for all projects), then say "run a security pass" in Claude Code — it audits your actual code and demands evidence for every item instead of reassurance. The other passes are prompt checklists you can paste directly.
+`skills/security-pass/` is a ready-to-install [Claude Code skill](https://docs.claude.com/en/docs/claude-code) version of the security pass. Drop it into your project's `.claude/skills/` directory (or `~/.claude/skills/` for all projects), then say "run a security pass" in Claude Code. It audits your actual code and demands evidence for every item instead of reassurance. The other passes are prompt checklists you can paste directly.
 
 ## How to use these
 
